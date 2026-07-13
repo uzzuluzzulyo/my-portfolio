@@ -3,7 +3,7 @@ import SectionContainer from '../ui/section-container.jsx';
 
 function ContactSection() {
   return (
-    <SectionContainer bgColor="#1B2A4A">
+    <SectionContainer bgColor="secondary.main">
       <Typography
         variant="h4"
         sx={{ color: '#FFFFFF', fontWeight: 700, mb: 2, fontSize: { xs: '1.5rem', md: '2rem' } }}

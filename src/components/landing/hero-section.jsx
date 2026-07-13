@@ -3,7 +3,7 @@ import SectionContainer from '../ui/section-container.jsx';
 
 function HeroSection() {
   return (
-    <SectionContainer bgColor="#FF4FA3">
+    <SectionContainer bgColor="primary.main">
       <Typography
         variant="h3"
         sx={{ color: '#FFFFFF', fontWeight: 700, mb: 2, fontSize: { xs: '2rem', md: '3rem' } }}

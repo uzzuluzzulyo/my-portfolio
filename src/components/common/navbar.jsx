@@ -20,11 +20,21 @@ function Navbar() {
             to={item.path}
             end={item.path === '/'}
             sx={{
+              position: 'relative',
               color: '#FFFFFF',
               fontWeight: 600,
               fontSize: { xs: '0.85rem', md: '1rem' },
               '&.active': {
                 color: (theme) => theme.palette.accent.main,
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  bottom: (theme) => `-${theme.spacing(1)}`,
+                  height: '3px',
+                  backgroundColor: (theme) => theme.palette.accent.main,
+                },
               },
             }}
           >

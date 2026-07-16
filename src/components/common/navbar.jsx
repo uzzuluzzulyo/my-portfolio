@@ -11,7 +11,15 @@ const navItems = [
 
 function Navbar() {
   return (
-    <AppBar position="sticky" color="secondary" elevation={0}>
+    <AppBar
+      position="sticky"
+      elevation={0}
+      sx={{
+        bgcolor: 'background.paper',
+        borderBottom: '1px solid',
+        borderColor: 'divider',
+      }}
+    >
       <Toolbar sx={{ justifyContent: 'center', gap: { xs: 1, md: 3 }, py: 1 }}>
         {navItems.map((item) => (
           <Button
@@ -21,11 +29,11 @@ function Navbar() {
             end={item.path === '/'}
             sx={{
               position: 'relative',
-              color: '#FFFFFF',
+              color: 'text.secondary',
               fontWeight: 600,
               fontSize: { xs: '0.85rem', md: '1rem' },
               '&.active': {
-                color: (theme) => theme.palette.accent.main,
+                color: 'accent.main',
                 '&::after': {
                   content: '""',
                   position: 'absolute',
@@ -33,7 +41,9 @@ function Navbar() {
                   right: 0,
                   bottom: (theme) => `-${theme.spacing(1)}`,
                   height: '3px',
-                  backgroundColor: (theme) => theme.palette.accent.main,
+                  borderRadius: '2px',
+                  backgroundColor: 'accent.main',
+                  boxShadow: (theme) => `0 0 10px ${theme.palette.accent.main}`,
                 },
               },
             }}

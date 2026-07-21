@@ -35,9 +35,9 @@ function ProjectsSection() {
 
       {!loading && preview.length > 0 && (
         <Grid container spacing={3} sx={{ mb: 4, textAlign: 'left' }}>
-          {preview.map((project, index) => (
+          {preview.map((project) => (
             <Grid key={project.id} size={{ xs: 12, sm: 6, md: 4 }}>
-              <ProjectCard project={project} index={index} />
+              <ProjectCard project={project} />
             </Grid>
           ))}
         </Grid>

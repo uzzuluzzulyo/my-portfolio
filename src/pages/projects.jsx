@@ -40,9 +40,9 @@ function Projects() {
 
         {!loading && !error && projects.length > 0 && (
           <Grid container spacing={3}>
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <Grid key={project.id} size={{ xs: 12, sm: 6, md: 4 }}>
-                <ProjectCard project={project} index={index} />
+                <ProjectCard project={project} />
               </Grid>
             ))}
           </Grid>

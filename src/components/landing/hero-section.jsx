@@ -31,7 +31,7 @@ function HeroSection() {
             textShadow: (theme) => `0 0 40px ${theme.palette.primary.main}55`,
           }}
         >
-          Hero
+          My Portfolio
         </Typography>
         <Typography sx={{ color: 'text.secondary', fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.6 }}>
           여기는 Hero 섹션입니다. 메인 비주얼, 이름, 간단 소개가 들어갈 예정입니다.

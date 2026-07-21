@@ -6,14 +6,17 @@ import { HashRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import theme from './theme.js'
+import SiteLock from './components/common/site-lock.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <HashRouter>
-        <App />
-      </HashRouter>
+      <SiteLock>
+        <HashRouter>
+          <App />
+        </HashRouter>
+      </SiteLock>
     </ThemeProvider>
   </StrictMode>,
 )

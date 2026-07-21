@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -11,15 +10,19 @@ import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
 /**
  * ProjectCard 컴포넌트
  *
- * projects 테이블 한 행을 카드 형태로 보여준다.
+ * projects 테이블 한 행을 카드 형태로 보여준다. 썸네일 이미지 대신 "PROJECT 01" 형태의
+ * 넘버링 헤더를 사용한다.
  *
  * Props:
- * @param {object} project - 프로젝트 데이터 (title, description, tech_stack, detail_url, thumbnail_url) [Required]
+ * @param {object} project - 프로젝트 데이터 (title, description, tech_stack, detail_url) [Required]
+ * @param {number} index - 카드 순번(0부터 시작), "PROJECT 01" 표기에 사용 [Optional, 기본값: 0]
  *
  * Example usage:
- * <ProjectCard project={project} />
+ * <ProjectCard project={project} index={0} />
  */
-function ProjectCard({ project }) {
+function ProjectCard({ project, index = 0 }) {
+  const number = String(index + 1).padStart(2, '0');
+
   return (
     <Card
       variant="outlined"
@@ -37,14 +40,38 @@ function ProjectCard({ project }) {
         },
       }}
     >
-      {project.thumbnail_url && (
-        <CardMedia
-          component="img"
-          src={project.thumbnail_url}
-          alt={project.title}
-          sx={{ aspectRatio: '4 / 3', objectFit: 'cover', bgcolor: 'background.paper' }}
-        />
-      )}
+      <Box
+        sx={{
+          px: { xs: 2.5, md: 3 },
+          pt: { xs: 2.5, md: 3 },
+          pb: 2,
+          borderBottom: '1px solid',
+          borderColor: 'divider',
+        }}
+      >
+        <Typography
+          sx={{
+            color: 'accent.main',
+            fontWeight: 700,
+            fontSize: '0.7rem',
+            letterSpacing: '0.2em',
+          }}
+        >
+          PROJECT
+        </Typography>
+        <Typography
+          sx={{
+            color: 'text.primary',
+            fontWeight: 800,
+            fontSize: '2.5rem',
+            lineHeight: 1.1,
+            fontFamily: '"Roboto Mono", "Roboto", monospace',
+          }}
+        >
+          {number}
+        </Typography>
+      </Box>
+
       <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: { xs: 2.5, md: 3 } }}>
         <Typography
           variant="h6"

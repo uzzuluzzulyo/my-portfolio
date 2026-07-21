@@ -5,10 +5,14 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CircularProgress from '@mui/material/CircularProgress';
+import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 import { supabase } from '../../lib/supabase.js';
+
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
 function Guestbook() {
   const [entries, setEntries] = useState([]);
@@ -16,6 +20,7 @@ function Guestbook() {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+  const [deletingId, setDeletingId] = useState(null);
   const [error, setError] = useState('');
 
   const fetchEntries = async () => {
@@ -57,6 +62,24 @@ function Guestbook() {
       await fetchEntries();
     }
     setSubmitting(false);
+  };
+
+  const handleDelete = async (id) => {
+    const input = window.prompt('관리자 비밀번호를 입력하세요.');
+    if (input === null) return;
+    if (input !== ADMIN_PASSWORD) {
+      window.alert('비밀번호가 올바르지 않습니다.');
+      return;
+    }
+
+    setDeletingId(id);
+    const { error: deleteError } = await supabase.from('guestbook').delete().eq('id', id);
+    if (deleteError) {
+      setError('메시지 삭제에 실패했습니다.');
+    } else {
+      await fetchEntries();
+    }
+    setDeletingId(null);
   };
 
   return (
@@ -132,12 +155,22 @@ function Guestbook() {
                   <Typography sx={{ color: 'text.primary', fontWeight: 700, wordBreak: 'break-word' }}>
                     {entry.name}
                   </Typography>
-                  <Typography sx={{ color: 'text.secondary', fontSize: '0.75rem', whiteSpace: 'nowrap', flexShrink: 0 }}>
-                    {new Date(entry.created_at).toLocaleString('ko-KR', {
-                      dateStyle: 'medium',
-                      timeStyle: 'short',
-                    })}
-                  </Typography>
+                  <Stack direction="row" alignItems="center" spacing={0.5} sx={{ flexShrink: 0 }}>
+                    <Typography sx={{ color: 'text.secondary', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>
+                      {new Date(entry.created_at).toLocaleString('ko-KR', {
+                        dateStyle: 'medium',
+                        timeStyle: 'short',
+                      })}
+                    </Typography>
+                    <IconButton
+                      size="small"
+                      onClick={() => handleDelete(entry.id)}
+                      disabled={deletingId === entry.id}
+                      sx={{ color: 'text.disabled', '&:hover': { color: 'error.main' } }}
+                    >
+                      <DeleteOutlineRoundedIcon fontSize="small" />
+                    </IconButton>
+                  </Stack>
                 </Stack>
                 <Typography sx={{ color: 'text.secondary', whiteSpace: 'pre-wrap' }}>
                   {entry.message}

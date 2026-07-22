@@ -6,6 +6,7 @@ import RevealOnScroll from '../ui/reveal-on-scroll.jsx';
 import ScrambleText from '../ui/scramble-text.jsx';
 import LiveClock from '../ui/live-clock.jsx';
 import GridFrame from '../ui/grid-frame.jsx';
+import LightRays from '../ui/light-rays.jsx';
 
 function HeroSection() {
   const indigoGroupRef = useRef(null);
@@ -130,6 +131,8 @@ function HeroSection() {
               }}
             />
           </Box>
+
+          <LightRays />
 
           <Container maxWidth="md" sx={{ position: 'relative' }}>
             <RevealOnScroll>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import LoadingBar from '../ui/loading-bar.jsx';
 
 const DURATION_MS = 900;
 
@@ -48,29 +48,17 @@ function SiteLoader({ children }) {
           zIndex: 2000,
           bgcolor: 'background.default',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
+          gap: 1.5,
           opacity: loading ? 1 : 0,
           visibility: loading ? 'visible' : 'hidden',
           pointerEvents: loading ? 'auto' : 'none',
           transition: 'opacity 0.4s ease, visibility 0.4s ease',
-          flexDirection: 'column',
-          gap: 1.5,
         }}
       >
-        <Typography
-          sx={{
-            fontFamily: (theme) => theme.typography.fontFamilyMono,
-            fontSize: '0.72rem',
-            letterSpacing: '0.16em',
-            color: 'text.secondary',
-          }}
-        >
-          DESIGN PROCESSING {Math.round(progress)}%
-        </Typography>
-        <Box sx={{ width: 180, height: 2, bgcolor: 'divider', borderRadius: 1, overflow: 'hidden' }}>
-          <Box sx={{ height: '100%', width: `${progress}%`, bgcolor: 'text.primary' }} />
-        </Box>
+        <LoadingBar progress={progress} />
       </Box>
       {children}
     </>

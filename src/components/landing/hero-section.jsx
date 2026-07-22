@@ -32,13 +32,16 @@ function HeroSection() {
               width: { xs: 200, md: 340 },
               height: { xs: 200, md: 340 },
               borderRadius: '50%',
+              overflow: 'hidden',
               background: (theme) => `
-                radial-gradient(circle at 30% 26%, rgba(255,255,255,0.9), rgba(255,255,255,0) 32%),
-                radial-gradient(circle at 68% 74%, rgba(0,0,0,0.4), transparent 55%),
-                radial-gradient(circle at 42% 38%, ${theme.palette.primary.light}, ${theme.palette.primary.dark} 78%)
+                linear-gradient(125deg, transparent 22%, rgba(255,255,255,0.55) 38%, rgba(255,255,255,0.05) 47%, transparent 60%),
+                radial-gradient(circle at 24% 20%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 7%, transparent 20%),
+                radial-gradient(circle at 82% 16%, rgba(255,255,255,0.25) 0%, transparent 26%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,0.55) 0%, transparent 58%),
+                radial-gradient(circle at 45% 45%, ${theme.palette.primary.light} 0%, ${theme.palette.primary.dark} 85%)
               `,
               boxShadow: (theme) =>
-                `inset -10px -14px 26px rgba(0,0,0,0.45), inset 8px 10px 18px rgba(255,255,255,0.18), 0 30px 60px ${theme.palette.primary.main}40`,
+                `inset -10px -14px 26px rgba(0,0,0,0.45), inset 8px 10px 18px rgba(255,255,255,0.12), 0 30px 60px ${theme.palette.primary.main}40`,
               animation: 'float-blob-a 9s ease-in-out infinite',
               '@keyframes float-blob-a': {
                 '0%, 100%': { transform: 'translate(0, 0)' },
@@ -55,12 +58,15 @@ function HeroSection() {
               width: { xs: 120, md: 190 },
               height: { xs: 120, md: 190 },
               borderRadius: '50%',
+              overflow: 'hidden',
               background: `
-                radial-gradient(circle at 32% 28%, rgba(255,255,255,0.9), rgba(255,255,255,0) 32%),
-                radial-gradient(circle at 68% 74%, rgba(0,0,0,0.4), transparent 55%),
-                radial-gradient(circle at 42% 38%, #F3CB78, #B8842E 78%)
+                linear-gradient(125deg, transparent 22%, rgba(255,255,255,0.5) 38%, rgba(255,255,255,0.05) 47%, transparent 60%),
+                radial-gradient(circle at 26% 22%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 7%, transparent 20%),
+                radial-gradient(circle at 82% 18%, rgba(255,255,255,0.22) 0%, transparent 26%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,0.5) 0%, transparent 55%),
+                radial-gradient(circle at 45% 45%, #F8DFA6 0%, #B8842E 85%)
               `,
-              boxShadow: '0 24px 46px rgba(232,179,78,0.28), inset -8px -10px 20px rgba(0,0,0,0.4), inset 6px 8px 14px rgba(255,255,255,0.2)',
+              boxShadow: '0 24px 46px rgba(232,179,78,0.28), inset -8px -10px 20px rgba(0,0,0,0.4), inset 6px 8px 14px rgba(255,255,255,0.12)',
               animation: 'float-blob-b 11s ease-in-out infinite',
               '@keyframes float-blob-b': {
                 '0%, 100%': { transform: 'translate(0, 0)' },

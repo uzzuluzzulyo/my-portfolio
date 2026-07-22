@@ -17,11 +17,22 @@ function ContactInfoCard() {
     >
       <EmailIcon sx={{ color: 'text.secondary', fontSize: 20 }} />
       <Box>
-        <Typography sx={{ color: 'text.disabled', fontSize: '0.75rem' }}>Email</Typography>
+        <Typography
+          sx={{ color: 'text.disabled', fontFamily: (theme) => theme.typography.fontFamilyMono, fontSize: '0.75rem' }}
+        >
+          Email
+        </Typography>
         <Typography
           component="a"
           href="mailto:uzzuluzzulyo0@gmail.com"
-          sx={{ color: 'text.primary', fontWeight: 600, textDecoration: 'none', '&:hover': { color: 'accent.main' } }}
+          sx={{
+            color: 'ink.main',
+            fontWeight: 600,
+            textDecoration: 'underline',
+            textDecorationColor: 'divider',
+            textUnderlineOffset: '3px',
+            '&:hover': { color: 'primary.main', textDecorationColor: 'primary.main' },
+          }}
         >
           uzzuluzzulyo0@gmail.com
         </Typography>

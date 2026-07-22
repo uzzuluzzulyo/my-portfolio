@@ -90,7 +90,7 @@ function Guestbook() {
 
       <Card
         variant="outlined"
-        sx={{ bgcolor: 'background.default', borderColor: 'divider', borderRadius: '6px', p: { xs: 2, md: 3 }, mb: 4 }}
+        sx={{ bgcolor: 'background.default', borderColor: 'divider', borderRadius: '4px', p: { xs: 2, md: 3 }, mb: 4 }}
       >
         <Box component="form" onSubmit={handleSubmit}>
           <Stack spacing={2}>
@@ -120,9 +120,10 @@ function Guestbook() {
               disabled={submitting}
               sx={{
                 alignSelf: { xs: 'stretch', md: 'flex-end' },
-                bgcolor: 'accent.main',
-                color: 'accent.contrastText',
-                '&:hover': { bgcolor: '#33BFAE' },
+                bgcolor: 'ink.main',
+                color: '#FBFAF4',
+                borderRadius: '4px',
+                '&:hover': { bgcolor: 'primary.main' },
               }}
             >
               {submitting ? '등록 중...' : '남기기'}
@@ -133,7 +134,7 @@ function Guestbook() {
 
       {loading ? (
         <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
-          <CircularProgress sx={{ color: 'accent.main' }} />
+          <CircularProgress sx={{ color: 'primary.main' }} />
         </Box>
       ) : entries.length === 0 ? (
         <Typography sx={{ color: 'text.secondary', textAlign: 'center' }}>
@@ -145,7 +146,7 @@ function Guestbook() {
             <Card
               key={entry.id}
               variant="outlined"
-              sx={{ borderColor: 'divider', bgcolor: 'background.default', borderRadius: '6px', p: 2 }}
+              sx={{ borderColor: 'divider', bgcolor: 'background.default', borderRadius: '4px', p: 2 }}
             >
               <CardContent sx={{ p: '8px !important' }}>
                 <Stack
@@ -155,11 +156,18 @@ function Guestbook() {
                   spacing={2}
                   sx={{ mb: 1, flexWrap: 'wrap', rowGap: 0.5 }}
                 >
-                  <Typography sx={{ color: 'text.primary', fontWeight: 700, wordBreak: 'break-word' }}>
+                  <Typography sx={{ color: 'ink.main', fontWeight: 700, wordBreak: 'break-word' }}>
                     {entry.name}
                   </Typography>
                   <Stack direction="row" alignItems="center" spacing={0.5} sx={{ flexShrink: 0 }}>
-                    <Typography sx={{ color: 'text.secondary', fontSize: '0.75rem', whiteSpace: 'nowrap' }}>
+                    <Typography
+                      sx={{
+                        color: 'text.disabled',
+                        fontFamily: (theme) => theme.typography.fontFamilyMono,
+                        fontSize: '0.72rem',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
                       {new Date(entry.created_at).toLocaleString('ko-KR', {
                         dateStyle: 'medium',
                         timeStyle: 'short',

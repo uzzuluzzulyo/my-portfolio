@@ -62,7 +62,7 @@ function SiteLock({ children }) {
             bgcolor: 'background.paper',
           }}
         >
-          <LockRoundedIcon sx={{ fontSize: 36, color: 'accent.main', mb: 1.5 }} />
+          <LockRoundedIcon sx={{ fontSize: 36, color: 'ink.main', mb: 1.5 }} />
           <Typography sx={{ color: 'text.primary', fontWeight: 700, mb: 2 }}>
             비공개 페이지입니다
           </Typography>
@@ -83,7 +83,7 @@ function SiteLock({ children }) {
             type="submit"
             variant="contained"
             fullWidth
-            sx={{ bgcolor: 'accent.main', color: 'accent.contrastText', '&:hover': { bgcolor: '#33BFAE' } }}
+            sx={{ bgcolor: 'ink.main', color: '#FBFAF4', '&:hover': { bgcolor: 'primary.main' } }}
           >
             입장하기
           </Button>

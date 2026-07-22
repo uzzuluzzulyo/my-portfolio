@@ -13,7 +13,7 @@ function AboutMe() {
       }}
     >
       <Container maxWidth="sm">
-        <Box sx={{ width: 40, height: 3, bgcolor: 'accent.main', mb: { xs: 3, md: 4 }, borderRadius: '2px' }} />
+        <Box sx={{ width: 40, height: 3, bgcolor: 'ink.main', mb: { xs: 3, md: 4 }, borderRadius: '2px' }} />
         <Typography
           variant="h4"
           sx={{ color: 'text.primary', mb: 2, fontSize: { xs: '1.75rem', md: '2.5rem' } }}

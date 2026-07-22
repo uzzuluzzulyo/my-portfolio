@@ -17,7 +17,7 @@ function Navbar() {
       position="sticky"
       elevation={0}
       sx={{
-        bgcolor: 'rgba(7, 8, 12, 0.85)',
+        bgcolor: 'rgba(251, 250, 244, 0.82)',
         backdropFilter: 'blur(8px)',
         borderBottom: '1px solid',
         borderColor: 'divider',
@@ -38,13 +38,30 @@ function Navbar() {
               sx={{
                 minWidth: 0,
                 p: 0,
+                position: 'relative',
                 color: 'text.secondary',
+                fontFamily: (theme) => theme.typography.fontFamilyMono,
                 fontWeight: 500,
-                fontSize: { xs: '0.78rem', md: '0.85rem' },
-                letterSpacing: '0.03em',
+                textTransform: 'uppercase',
+                fontSize: { xs: '0.72rem', md: '0.78rem' },
+                letterSpacing: '0.06em',
                 transition: 'color 0.15s ease',
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  bottom: -4,
+                  height: '1px',
+                  bgcolor: 'ink.main',
+                  transform: 'scaleX(0)',
+                  transformOrigin: 'left',
+                  transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                },
                 '&:hover': { bgcolor: 'transparent', color: 'text.primary' },
+                '&:hover::after': { transform: 'scaleX(1)' },
                 '&.active': { color: 'text.primary' },
+                '&.active::after': { transform: 'scaleX(1)' },
               }}
             >
               {item.label}

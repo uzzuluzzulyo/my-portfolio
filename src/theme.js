@@ -2,46 +2,55 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: '#5EEAD4',
-      light: '#99F6E4',
-      dark: '#2DD4BF',
-      contrastText: '#04110F',
+      main: '#2F6FE4',
+      light: '#6E9CF2',
+      dark: '#1D4FBF',
+      contrastText: '#FBFAF4',
     },
     secondary: {
-      main: '#60A5FA',
-      dark: '#3B82F6',
-      contrastText: '#04110F',
+      main: '#0A0A0C',
+      contrastText: '#FBFAF4',
     },
     accent: {
-      main: '#5EEAD4',
-      contrastText: '#04110F',
+      main: '#2F6FE4',
+      lime: '#D8FF3E',
+      contrastText: '#FBFAF4',
+    },
+    sky: {
+      main: '#CFE4F5',
+    },
+    ink: {
+      main: '#0A0A0C',
+      contrastText: '#FBFAF4',
     },
     background: {
-      default: '#07080C',
-      paper: '#12141C',
+      default: '#FBFAF4',
+      paper: '#F2F0E8',
     },
     text: {
-      primary: '#F2F4F8',
-      secondary: '#8A93A6',
-      disabled: '#4B5265',
+      primary: '#0A0A0C',
+      secondary: '#5B6270',
+      disabled: '#9AA0AC',
     },
-    divider: 'rgba(94, 234, 212, 0.12)',
+    divider: 'rgba(10, 10, 12, 0.14)',
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamilyMono: '"JetBrains Mono", "Roboto Mono", monospace',
     h1: {
       fontSize: '2.125rem',
-      fontWeight: 500,
+      fontWeight: 900,
     },
     h4: {
-      fontWeight: 800,
-      letterSpacing: '-0.02em',
+      fontWeight: 900,
+      letterSpacing: '-0.03em',
     },
     overline: {
-      fontWeight: 700,
-      letterSpacing: '0.14em',
+      fontFamily: '"JetBrains Mono", "Roboto Mono", monospace',
+      fontWeight: 500,
+      letterSpacing: '0.1em',
       lineHeight: 1.6,
     },
   },

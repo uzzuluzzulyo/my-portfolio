@@ -23,7 +23,8 @@ function LiveClock() {
   return (
     <Typography
       sx={{
-        color: 'text.disabled',
+        color: 'text.secondary',
+        fontFamily: (theme) => theme.typography.fontFamilyMono,
         fontSize: '0.75rem',
         fontVariantNumeric: 'tabular-nums',
         letterSpacing: '0.02em',

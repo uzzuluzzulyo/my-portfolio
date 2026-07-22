@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -5,6 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
+
+const CAN_TILT = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
 
 /**
  * ProjectCard 컴포넌트
@@ -19,8 +22,26 @@ import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
  * <ProjectCard project={project} />
  */
 function ProjectCard({ project }) {
+  const cardRef = useRef(null);
+
+  function handleMouseMove(event) {
+    if (!CAN_TILT || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const px = (event.clientX - rect.left) / rect.width - 0.5;
+    const py = (event.clientY - rect.top) / rect.height - 0.5;
+    cardRef.current.style.transform = `perspective(900px) rotateX(${py * -8}deg) rotateY(${px * 8}deg) translateY(-3px)`;
+  }
+
+  function handleMouseLeave() {
+    if (!cardRef.current) return;
+    cardRef.current.style.transform = '';
+  }
+
   return (
     <Card
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       variant="outlined"
       sx={{
         borderColor: 'divider',
@@ -30,10 +51,10 @@ function ProjectCard({ project }) {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        transition: 'border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease',
+        transition: 'border-color 0.25s ease, transform 0.15s ease-out, box-shadow 0.25s ease',
+        willChange: 'transform',
         '&:hover': {
           borderColor: 'primary.main',
-          transform: 'translateY(-3px)',
           boxShadow: '0 12px 28px rgba(0,0,0,0.4)',
         },
       }}

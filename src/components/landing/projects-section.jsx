@@ -58,7 +58,9 @@ function ProjectsSection() {
           fontWeight: 600,
           fontSize: '0.9rem',
           px: 0,
+          '& .MuiButton-endIcon': { transition: 'transform 0.2s ease' },
           '&:hover': { bgcolor: 'transparent', color: 'accent.main' },
+          '&:hover .MuiButton-endIcon': { transform: 'translateX(3px)' },
         }}
       >
         더 보기

@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import RevealOnScroll from './reveal-on-scroll.jsx';
 
 /**
  * SectionContainer 컴포넌트
@@ -29,7 +30,7 @@ function SectionContainer({ children, bgColor = 'background.default', maxWidth =
       }}
     >
       <Container maxWidth={maxWidth} sx={{ textAlign: 'left' }}>
-        {children}
+        <RevealOnScroll>{children}</RevealOnScroll>
       </Container>
     </Box>
   );

@@ -85,7 +85,9 @@ function ProjectCard({ project }) {
                 fontWeight: 600,
                 fontSize: '0.85rem',
                 px: 0,
+                '& .MuiButton-endIcon': { transition: 'transform 0.2s ease' },
                 '&:hover': { bgcolor: 'transparent', color: 'accent.main' },
+                '&:hover .MuiButton-endIcon': { transform: 'translate(2px, -2px)' },
               }}
             >
               바로가기

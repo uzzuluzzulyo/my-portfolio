@@ -3,6 +3,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
+import LiveClock from '../ui/live-clock.jsx';
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -22,7 +23,10 @@ function Navbar() {
         borderColor: 'divider',
       }}
     >
-      <Toolbar sx={{ maxWidth: 960, width: '100%', mx: 'auto', justifyContent: 'flex-end', gap: { xs: 2, md: 4 }, py: 1.5 }}>
+      <Toolbar sx={{ maxWidth: 960, width: '100%', mx: 'auto', justifyContent: 'space-between', gap: { xs: 2, md: 4 }, py: 1.5 }}>
+        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <LiveClock />
+        </Box>
         <Box sx={{ display: 'flex', gap: { xs: 2, md: 4 } }}>
           {navItems.map((item) => (
             <Button

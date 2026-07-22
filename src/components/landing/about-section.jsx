@@ -2,22 +2,13 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import SectionContainer from '../ui/section-container.jsx';
 import ScrambleText from '../ui/scramble-text.jsx';
+import GhostNumber from '../ui/ghost-number.jsx';
 
 function AboutSection() {
   return (
     <SectionContainer bgColor="background.paper" noDivider>
-      <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1.5, mb: 2 }}>
-        <Typography
-          sx={{
-            color: 'text.disabled',
-            fontFamily: (theme) => theme.typography.fontFamilyMono,
-            fontSize: '0.8rem',
-            fontWeight: 500,
-            letterSpacing: '0.05em',
-          }}
-        >
-          01
-        </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, md: 2.5 }, mb: 2.5 }}>
+        <GhostNumber>01</GhostNumber>
         <ScrambleText
           text="About Me"
           component="h2"

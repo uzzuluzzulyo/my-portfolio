@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 const DURATION_MS = 900;
 
@@ -53,8 +54,20 @@ function SiteLoader({ children }) {
           visibility: loading ? 'visible' : 'hidden',
           pointerEvents: loading ? 'auto' : 'none',
           transition: 'opacity 0.4s ease, visibility 0.4s ease',
+          flexDirection: 'column',
+          gap: 1.5,
         }}
       >
+        <Typography
+          sx={{
+            fontFamily: (theme) => theme.typography.fontFamilyMono,
+            fontSize: '0.72rem',
+            letterSpacing: '0.16em',
+            color: 'text.secondary',
+          }}
+        >
+          DESIGN PROCESSING {Math.round(progress)}%
+        </Typography>
         <Box sx={{ width: 180, height: 2, bgcolor: 'divider', borderRadius: 1, overflow: 'hidden' }}>
           <Box sx={{ height: '100%', width: `${progress}%`, bgcolor: 'text.primary' }} />
         </Box>

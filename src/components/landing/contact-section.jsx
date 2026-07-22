@@ -2,24 +2,15 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import SectionContainer from '../ui/section-container.jsx';
 import ScrambleText from '../ui/scramble-text.jsx';
+import GhostNumber from '../ui/ghost-number.jsx';
 import ContactInfoCard from './contact-info-card.jsx';
 import Guestbook from './guestbook.jsx';
 
 function ContactSection() {
   return (
     <SectionContainer bgColor="background.default" showBottom>
-      <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1.5, mb: 2 }}>
-        <Typography
-          sx={{
-            color: 'text.disabled',
-            fontFamily: (theme) => theme.typography.fontFamilyMono,
-            fontSize: '0.8rem',
-            fontWeight: 500,
-            letterSpacing: '0.05em',
-          }}
-        >
-          04
-        </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, md: 2.5 }, mb: 2.5 }}>
+        <GhostNumber>04</GhostNumber>
         <ScrambleText
           text="Contact"
           component="h2"

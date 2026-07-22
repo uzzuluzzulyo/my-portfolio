@@ -15,7 +15,7 @@ const theme = createTheme({
     },
     accent: {
       main: '#6C8EEF',
-      gold: '#E8B34E',
+      cyan: '#38BDF8',
       contrastText: '#0D0F14',
     },
     background: {

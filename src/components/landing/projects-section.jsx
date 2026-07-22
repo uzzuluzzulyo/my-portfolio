@@ -8,6 +8,7 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import SectionContainer from '../ui/section-container.jsx';
 import ProjectCard from '../ui/project-card.jsx';
 import ScrambleText from '../ui/scramble-text.jsx';
+import GhostNumber from '../ui/ghost-number.jsx';
 import { useProjects } from '../../hooks/use-projects.js';
 
 const PREVIEW_COUNT = 3;
@@ -18,18 +19,8 @@ function ProjectsSection() {
 
   return (
     <SectionContainer maxWidth="lg" bgColor="background.paper">
-      <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1.5, mb: 1 }}>
-        <Typography
-          sx={{
-            color: 'text.disabled',
-            fontFamily: (theme) => theme.typography.fontFamilyMono,
-            fontSize: '0.8rem',
-            fontWeight: 500,
-            letterSpacing: '0.05em',
-          }}
-        >
-          03
-        </Typography>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, md: 2.5 }, mb: 1.5 }}>
+        <GhostNumber>03</GhostNumber>
         <ScrambleText
           text="Projects"
           component="h2"

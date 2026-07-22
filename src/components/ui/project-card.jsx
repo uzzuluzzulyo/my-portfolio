@@ -2,8 +2,6 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
@@ -27,14 +25,14 @@ function ProjectCard({ project }) {
       sx={{
         borderColor: 'divider',
         bgcolor: 'background.default',
+        borderRadius: '6px',
         overflow: 'hidden',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        transition: 'border-color 0.2s ease, transform 0.2s ease',
+        transition: 'border-color 0.2s ease',
         '&:hover': {
-          borderColor: 'accent.main',
-          transform: 'translateY(-4px)',
+          borderColor: 'text.secondary',
         },
       }}
     >
@@ -44,38 +42,33 @@ function ProjectCard({ project }) {
           src={project.thumbnail_url}
           alt={project.title}
           loading="lazy"
-          sx={{ aspectRatio: '4 / 3', objectFit: 'cover', objectPosition: 'top', bgcolor: 'background.paper' }}
+          sx={{
+            aspectRatio: '4 / 3',
+            objectFit: 'cover',
+            objectPosition: 'top',
+            bgcolor: 'background.paper',
+            borderBottom: '1px solid',
+            borderColor: 'divider',
+            filter: 'grayscale(0.15)',
+          }}
         />
       )}
 
       <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: { xs: 2.5, md: 3 } }}>
         <Typography
           variant="h6"
-          sx={{ color: 'text.primary', fontWeight: 700, mb: 1, fontSize: { xs: '1.05rem', md: '1.15rem' } }}
+          sx={{ color: 'text.primary', fontWeight: 700, mb: 1, fontSize: { xs: '1.05rem', md: '1.15rem' }, letterSpacing: '-0.01em' }}
         >
           {project.title}
         </Typography>
-        <Typography sx={{ color: 'text.secondary', fontSize: '0.9rem', lineHeight: 1.6, mb: 2, flexGrow: 1 }}>
+        <Typography sx={{ color: 'text.secondary', fontSize: '0.9rem', lineHeight: 1.6, mb: 2.5, flexGrow: 1 }}>
           {project.description}
         </Typography>
 
         {project.tech_stack?.length > 0 && (
-          <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 2.5 }}>
-            {project.tech_stack.map((tech) => (
-              <Chip
-                key={tech}
-                label={tech}
-                size="small"
-                sx={{
-                  bgcolor: 'transparent',
-                  border: '1px solid',
-                  borderColor: 'divider',
-                  color: 'text.secondary',
-                  fontSize: '0.72rem',
-                }}
-              />
-            ))}
-          </Stack>
+          <Typography sx={{ color: 'text.disabled', fontSize: '0.72rem', letterSpacing: '0.02em', mb: 2 }}>
+            {project.tech_stack.join('  ·  ')}
+          </Typography>
         )}
 
         {project.detail_url && (
@@ -85,12 +78,14 @@ function ProjectCard({ project }) {
               href={project.detail_url}
               target="_blank"
               rel="noopener noreferrer"
-              endIcon={<ArrowOutwardRoundedIcon />}
+              disableRipple
+              endIcon={<ArrowOutwardRoundedIcon sx={{ fontSize: '0.95rem !important' }} />}
               sx={{
-                color: 'accent.main',
-                fontWeight: 700,
+                color: 'text.primary',
+                fontWeight: 600,
+                fontSize: '0.85rem',
                 px: 0,
-                '&:hover': { bgcolor: 'transparent', opacity: 0.8 },
+                '&:hover': { bgcolor: 'transparent', color: 'accent.main' },
               }}
             >
               바로가기

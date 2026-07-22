@@ -84,11 +84,14 @@ function Guestbook() {
 
   return (
     <Box sx={{ width: '100%', textAlign: 'left' }}>
-      <Typography variant="h5" sx={{ color: 'text.primary', fontWeight: 700, mb: 3, textAlign: 'center' }}>
+      <Typography sx={{ color: 'text.primary', fontWeight: 700, fontSize: '1.1rem', mb: 2.5 }}>
         방명록
       </Typography>
 
-      <Card sx={{ bgcolor: 'background.default', p: { xs: 2, md: 3 }, mb: 4 }}>
+      <Card
+        variant="outlined"
+        sx={{ bgcolor: 'background.default', borderColor: 'divider', borderRadius: '6px', p: { xs: 2, md: 3 }, mb: 4 }}
+      >
         <Box component="form" onSubmit={handleSubmit}>
           <Stack spacing={2}>
             <TextField
@@ -142,7 +145,7 @@ function Guestbook() {
             <Card
               key={entry.id}
               variant="outlined"
-              sx={{ borderColor: 'divider', bgcolor: 'background.default', p: 2 }}
+              sx={{ borderColor: 'divider', bgcolor: 'background.default', borderRadius: '6px', p: 2 }}
             >
               <CardContent sx={{ p: '8px !important' }}>
                 <Stack

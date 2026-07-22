@@ -35,8 +35,20 @@ const theme = createTheme({
       fontSize: '2.125rem',
       fontWeight: 500,
     },
+    h4: {
+      fontWeight: 800,
+      letterSpacing: '-0.02em',
+    },
+    overline: {
+      fontWeight: 700,
+      letterSpacing: '0.14em',
+      lineHeight: 1.6,
+    },
   },
   spacing: 8,
+  shape: {
+    borderRadius: 4,
+  },
 });
 
 export default theme;

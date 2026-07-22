@@ -16,13 +16,18 @@ function ProjectsSection() {
   const preview = projects.slice(0, PREVIEW_COUNT);
 
   return (
-    <SectionContainer bgColor="background.paper" maxWidth="lg">
-      <Typography
-        variant="h4"
-        sx={{ color: 'text.primary', fontWeight: 700, mb: 1, fontSize: { xs: '1.5rem', md: '2rem' } }}
-      >
-        Projects
-      </Typography>
+    <SectionContainer maxWidth="lg">
+      <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1.5, mb: 1 }}>
+        <Typography sx={{ color: 'text.disabled', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.05em' }}>
+          03
+        </Typography>
+        <Typography
+          variant="h4"
+          sx={{ color: 'text.primary', fontSize: { xs: '1.5rem', md: '2rem' } }}
+        >
+          Projects
+        </Typography>
+      </Box>
       <Typography sx={{ color: 'text.secondary', fontSize: { xs: '1rem', md: '1.1rem' }, mb: { xs: 4, md: 5 } }}>
         대표 프로젝트를 소개해요
       </Typography>
@@ -34,7 +39,7 @@ function ProjectsSection() {
       )}
 
       {!loading && preview.length > 0 && (
-        <Grid container spacing={3} sx={{ mb: 4, textAlign: 'left' }}>
+        <Grid container spacing={3} sx={{ mb: 4 }}>
           {preview.map((project) => (
             <Grid key={project.id} size={{ xs: 12, sm: 6, md: 4 }}>
               <ProjectCard project={project} />
@@ -46,14 +51,14 @@ function ProjectsSection() {
       <Button
         component={RouterLink}
         to="/projects"
-        endIcon={<ArrowForwardRoundedIcon />}
+        disableRipple
+        endIcon={<ArrowForwardRoundedIcon sx={{ fontSize: '1rem !important' }} />}
         sx={{
-          color: 'accent.main',
-          fontWeight: 700,
-          border: '1px solid',
-          borderColor: 'accent.main',
-          px: 3,
-          '&:hover': { bgcolor: 'rgba(94, 234, 212, 0.08)' },
+          color: 'text.primary',
+          fontWeight: 600,
+          fontSize: '0.9rem',
+          px: 0,
+          '&:hover': { bgcolor: 'transparent', color: 'accent.main' },
         }}
       >
         더 보기

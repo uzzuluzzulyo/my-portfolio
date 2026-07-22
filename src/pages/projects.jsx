@@ -12,13 +12,14 @@ function Projects() {
   return (
     <Box sx={{ width: '100%', minHeight: '80vh', py: { xs: 6, md: 10 }, px: { xs: 2, md: 3 } }}>
       <Container maxWidth="lg">
+        <Box sx={{ width: 40, height: 3, bgcolor: 'accent.main', mb: { xs: 3, md: 4 }, borderRadius: '2px' }} />
         <Typography
           variant="h4"
-          sx={{ color: 'text.primary', fontWeight: 700, mb: 1, textAlign: 'center', fontSize: { xs: '1.75rem', md: '2.5rem' } }}
+          sx={{ color: 'text.primary', mb: 1, fontSize: { xs: '1.75rem', md: '2.5rem' } }}
         >
           Projects
         </Typography>
-        <Typography sx={{ color: 'text.secondary', textAlign: 'center', mb: { xs: 5, md: 7 } }}>
+        <Typography sx={{ color: 'text.secondary', mb: { xs: 5, md: 7 } }}>
           지금까지 만든 프로젝트들이에요
         </Typography>
 

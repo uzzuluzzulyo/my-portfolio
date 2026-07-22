@@ -5,11 +5,11 @@ import ScrambleText from '../ui/scramble-text.jsx';
 
 function SkillTreeSection() {
   return (
-    <SectionContainer bgColor="ink.main" lineColor="rgba(251, 250, 244, 0.18)">
+    <SectionContainer bgColor="background.default">
       <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1.5, mb: 2 }}>
         <Typography
           sx={{
-            color: 'rgba(251, 250, 244, 0.45)',
+            color: 'text.disabled',
             fontFamily: (theme) => theme.typography.fontFamilyMono,
             fontSize: '0.8rem',
             fontWeight: 500,
@@ -22,10 +22,10 @@ function SkillTreeSection() {
           text="Skill Tree"
           component="h2"
           variant="h4"
-          sx={{ color: '#FBFAF4', fontSize: { xs: '1.5rem', md: '2rem' } }}
+          sx={{ color: 'text.primary', fontSize: { xs: '1.5rem', md: '2rem' } }}
         />
       </Box>
-      <Typography sx={{ color: 'rgba(251, 250, 244, 0.65)', fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7, maxWidth: 640 }}>
+      <Typography sx={{ color: 'text.secondary', fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7, maxWidth: 640 }}>
         여기는 Skill Tree 섹션입니다. 기술 스택을 트리나 프로그레스바로 시각화할 예정입니다.
       </Typography>
     </SectionContainer>

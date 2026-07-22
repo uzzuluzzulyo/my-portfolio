@@ -5,7 +5,7 @@ import ScrambleText from '../ui/scramble-text.jsx';
 
 function AboutSection() {
   return (
-    <SectionContainer noDivider>
+    <SectionContainer bgColor="background.paper" noDivider>
       <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1.5, mb: 2 }}>
         <Typography
           sx={{

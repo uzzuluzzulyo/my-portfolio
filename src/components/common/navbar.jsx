@@ -17,7 +17,7 @@ function Navbar() {
       position="sticky"
       elevation={0}
       sx={{
-        bgcolor: 'rgba(251, 250, 244, 0.82)',
+        bgcolor: 'rgba(10, 10, 12, 0.82)',
         backdropFilter: 'blur(8px)',
         borderBottom: '1px solid',
         borderColor: 'divider',
@@ -53,7 +53,7 @@ function Navbar() {
                   right: 0,
                   bottom: -4,
                   height: '1px',
-                  bgcolor: 'ink.main',
+                  bgcolor: 'text.primary',
                   transform: 'scaleX(0)',
                   transformOrigin: 'left',
                   transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',

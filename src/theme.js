@@ -2,39 +2,32 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
     primary: {
-      main: '#2F6FE4',
-      light: '#6E9CF2',
-      dark: '#1D4FBF',
-      contrastText: '#FBFAF4',
+      main: '#5B8DEF',
+      light: '#8FB4F6',
+      dark: '#3C6FD1',
+      contrastText: '#0A0A0C',
     },
     secondary: {
-      main: '#0A0A0C',
-      contrastText: '#FBFAF4',
+      main: '#F4F3EE',
+      contrastText: '#0A0A0C',
     },
     accent: {
-      main: '#2F6FE4',
+      main: '#5B8DEF',
       lime: '#D8FF3E',
-      contrastText: '#FBFAF4',
-    },
-    sky: {
-      main: '#CFE4F5',
-    },
-    ink: {
-      main: '#0A0A0C',
-      contrastText: '#FBFAF4',
+      contrastText: '#0A0A0C',
     },
     background: {
-      default: '#FBFAF4',
-      paper: '#F2F0E8',
+      default: '#0A0A0C',
+      paper: '#141519',
     },
     text: {
-      primary: '#0A0A0C',
-      secondary: '#5B6270',
-      disabled: '#9AA0AC',
+      primary: '#F4F3EE',
+      secondary: '#9BA0AC',
+      disabled: '#5B6270',
     },
-    divider: 'rgba(10, 10, 12, 0.14)',
+    divider: 'rgba(244, 243, 238, 0.12)',
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',

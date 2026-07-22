@@ -10,20 +10,24 @@ import '@fontsource/roboto/900.css'
 import '@fontsource/jetbrains-mono/400.css'
 import '@fontsource/jetbrains-mono/500.css'
 import '@fontsource/jetbrains-mono/700.css'
+import '@fontsource/pacifico/400.css'
 import './index.css'
 import App from './App.jsx'
 import theme from './theme.js'
 import SiteLock from './components/common/site-lock.jsx'
+import SiteLoader from './components/common/site-loader.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <SiteLock>
-        <HashRouter>
-          <App />
-        </HashRouter>
-      </SiteLock>
+      <SiteLoader>
+        <SiteLock>
+          <HashRouter>
+            <App />
+          </HashRouter>
+        </SiteLock>
+      </SiteLoader>
     </ThemeProvider>
   </StrictMode>,
 )

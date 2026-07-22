@@ -26,7 +26,7 @@ function ContactInfoCard() {
           component="a"
           href="mailto:uzzuluzzulyo0@gmail.com"
           sx={{
-            color: 'ink.main',
+            color: 'text.primary',
             fontWeight: 600,
             textDecoration: 'underline',
             textDecorationColor: 'divider',

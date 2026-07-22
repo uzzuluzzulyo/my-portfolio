@@ -90,7 +90,7 @@ function Guestbook() {
 
       <Card
         variant="outlined"
-        sx={{ bgcolor: 'background.default', borderColor: 'divider', borderRadius: '4px', p: { xs: 2, md: 3 }, mb: 4 }}
+        sx={{ bgcolor: 'background.paper', borderColor: 'divider', borderRadius: '4px', p: { xs: 2, md: 3 }, mb: 4 }}
       >
         <Box component="form" onSubmit={handleSubmit}>
           <Stack spacing={2}>
@@ -120,10 +120,10 @@ function Guestbook() {
               disabled={submitting}
               sx={{
                 alignSelf: { xs: 'stretch', md: 'flex-end' },
-                bgcolor: 'ink.main',
-                color: '#FBFAF4',
+                bgcolor: 'primary.main',
+                color: 'primary.contrastText',
                 borderRadius: '4px',
-                '&:hover': { bgcolor: 'primary.main' },
+                '&:hover': { bgcolor: 'primary.dark' },
               }}
             >
               {submitting ? '등록 중...' : '남기기'}
@@ -146,7 +146,7 @@ function Guestbook() {
             <Card
               key={entry.id}
               variant="outlined"
-              sx={{ borderColor: 'divider', bgcolor: 'background.default', borderRadius: '4px', p: 2 }}
+              sx={{ borderColor: 'divider', bgcolor: 'background.paper', borderRadius: '4px', p: 2 }}
             >
               <CardContent sx={{ p: '8px !important' }}>
                 <Stack
@@ -156,7 +156,7 @@ function Guestbook() {
                   spacing={2}
                   sx={{ mb: 1, flexWrap: 'wrap', rowGap: 0.5 }}
                 >
-                  <Typography sx={{ color: 'ink.main', fontWeight: 700, wordBreak: 'break-word' }}>
+                  <Typography sx={{ color: 'text.primary', fontWeight: 700, wordBreak: 'break-word' }}>
                     {entry.name}
                   </Typography>
                   <Stack direction="row" alignItems="center" spacing={0.5} sx={{ flexShrink: 0 }}>

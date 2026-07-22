@@ -7,7 +7,7 @@ import Guestbook from './guestbook.jsx';
 
 function ContactSection() {
   return (
-    <SectionContainer bgColor="sky.main" showBottom>
+    <SectionContainer bgColor="background.default" showBottom>
       <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1.5, mb: 2 }}>
         <Typography
           sx={{
@@ -24,7 +24,7 @@ function ContactSection() {
           text="Contact"
           component="h2"
           variant="h4"
-          sx={{ color: 'ink.main', fontSize: { xs: '1.5rem', md: '2rem' } }}
+          sx={{ color: 'text.primary', fontSize: { xs: '1.5rem', md: '2rem' } }}
         />
       </Box>
       <Typography sx={{ color: 'text.secondary', fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7, mb: 5, maxWidth: 640 }}>

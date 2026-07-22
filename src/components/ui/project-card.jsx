@@ -32,9 +32,9 @@ function ProjectCard({ project }) {
         flexDirection: 'column',
         transition: 'border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease',
         '&:hover': {
-          borderColor: 'ink.main',
+          borderColor: 'primary.main',
           transform: 'translateY(-3px)',
-          boxShadow: '0 12px 28px rgba(10,10,12,0.16)',
+          boxShadow: '0 12px 28px rgba(0,0,0,0.4)',
         },
       }}
     >
@@ -49,7 +49,9 @@ function ProjectCard({ project }) {
             position: 'relative',
             display: 'block',
             overflow: 'hidden',
-            bgcolor: 'ink.main',
+            bgcolor: '#000000',
+            border: '1px solid',
+            borderColor: 'divider',
             p: 1,
           }}
         >
@@ -61,7 +63,7 @@ function ProjectCard({ project }) {
                 right: 8,
                 zIndex: 1,
                 bgcolor: 'accent.lime',
-                color: 'ink.main',
+                color: 'accent.contrastText',
                 fontFamily: (theme) => theme.typography.fontFamilyMono,
                 fontSize: '0.65rem',
                 fontWeight: 700,
@@ -124,7 +126,7 @@ function ProjectCard({ project }) {
       <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: { xs: 2.5, md: 3 } }}>
         <Typography
           variant="h6"
-          sx={{ color: 'ink.main', fontWeight: 800, mb: 1, fontSize: { xs: '1.05rem', md: '1.15rem' }, letterSpacing: '-0.01em' }}
+          sx={{ color: 'text.primary', fontWeight: 800, mb: 1, fontSize: { xs: '1.05rem', md: '1.15rem' }, letterSpacing: '-0.01em' }}
         >
           {project.title}
         </Typography>
@@ -156,7 +158,7 @@ function ProjectCard({ project }) {
               disableRipple
               endIcon={<ArrowOutwardRoundedIcon sx={{ fontSize: '0.95rem !important' }} />}
               sx={{
-                color: 'ink.main',
+                color: 'text.primary',
                 fontWeight: 600,
                 fontSize: '0.85rem',
                 px: 0,

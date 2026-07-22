@@ -5,10 +5,11 @@ import RevealOnScroll from '../ui/reveal-on-scroll.jsx';
 import ScrambleText from '../ui/scramble-text.jsx';
 import LiveClock from '../ui/live-clock.jsx';
 import GridFrame from '../ui/grid-frame.jsx';
+import GlossyWord from '../ui/glossy-word.jsx';
 
 function HeroSection() {
   return (
-    <Box sx={{ width: '100%', bgcolor: 'sky.main' }}>
+    <Box sx={{ width: '100%', bgcolor: 'background.default' }}>
       <GridFrame showTop showBottom>
         <Box
           sx={{
@@ -17,7 +18,7 @@ function HeroSection() {
             py: { xs: 10, md: 16 },
             px: { xs: 2.5, md: 4 },
             overflow: 'hidden',
-            minHeight: { md: 560 },
+            minHeight: { xs: 460, md: 560 },
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
@@ -32,7 +33,7 @@ function HeroSection() {
               width: { xs: 220, md: 380 },
               height: { xs: 220, md: 380 },
               borderRadius: '50%',
-              background: (theme) => `radial-gradient(circle at 35% 35%, ${theme.palette.primary.light}88, transparent 70%)`,
+              background: (theme) => `radial-gradient(circle at 35% 35%, ${theme.palette.primary.light}55, transparent 70%)`,
               filter: 'blur(10px)',
               animation: 'float-blob-a 9s ease-in-out infinite',
               '@keyframes float-blob-a': {
@@ -60,15 +61,17 @@ function HeroSection() {
             }}
           />
 
+          <GlossyWord text="Hello" sx={{ bottom: { xs: '2%', md: '10%' }, left: { xs: '2%', md: '8%' }, transform: 'rotate(-3deg)' }} />
+
           <Container maxWidth="md" sx={{ position: 'relative' }}>
             <RevealOnScroll>
-              <Box sx={{ width: 40, height: 3, bgcolor: 'ink.main', mb: { xs: 3, md: 4 }, borderRadius: '2px' }} />
+              <Box sx={{ width: 40, height: 3, bgcolor: 'text.primary', mb: { xs: 3, md: 4 }, borderRadius: '2px' }} />
               <ScrambleText
                 text="My Portfolio"
                 component="h1"
                 variant="h3"
                 sx={{
-                  color: 'ink.main',
+                  color: 'text.primary',
                   fontWeight: 900,
                   mb: 2.5,
                   letterSpacing: '-0.03em',

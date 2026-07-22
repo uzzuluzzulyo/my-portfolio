@@ -5,7 +5,6 @@ import RevealOnScroll from '../ui/reveal-on-scroll.jsx';
 import ScrambleText from '../ui/scramble-text.jsx';
 import LiveClock from '../ui/live-clock.jsx';
 import GridFrame from '../ui/grid-frame.jsx';
-import GlossyWord from '../ui/glossy-word.jsx';
 
 function HeroSection() {
   return (
@@ -28,17 +27,22 @@ function HeroSection() {
             aria-hidden
             sx={{
               position: 'absolute',
-              top: '-10%',
-              right: '-8%',
-              width: { xs: 220, md: 380 },
-              height: { xs: 220, md: 380 },
+              top: '-8%',
+              right: '-6%',
+              width: { xs: 200, md: 340 },
+              height: { xs: 200, md: 340 },
               borderRadius: '50%',
-              background: (theme) => `radial-gradient(circle at 35% 35%, ${theme.palette.primary.light}55, transparent 70%)`,
-              filter: 'blur(10px)',
+              background: (theme) => `
+                radial-gradient(circle at 30% 26%, rgba(255,255,255,0.9), rgba(255,255,255,0) 32%),
+                radial-gradient(circle at 68% 74%, rgba(0,0,0,0.4), transparent 55%),
+                radial-gradient(circle at 42% 38%, ${theme.palette.primary.light}, ${theme.palette.primary.dark} 78%)
+              `,
+              boxShadow: (theme) =>
+                `inset -10px -14px 26px rgba(0,0,0,0.45), inset 8px 10px 18px rgba(255,255,255,0.18), 0 30px 60px ${theme.palette.primary.main}40`,
               animation: 'float-blob-a 9s ease-in-out infinite',
               '@keyframes float-blob-a': {
                 '0%, 100%': { transform: 'translate(0, 0)' },
-                '50%': { transform: 'translate(-18px, 22px)' },
+                '50%': { transform: 'translate(-14px, 18px)' },
               },
             }}
           />
@@ -46,22 +50,24 @@ function HeroSection() {
             aria-hidden
             sx={{
               position: 'absolute',
-              bottom: '-15%',
-              right: '8%',
-              width: { xs: 140, md: 220 },
-              height: { xs: 140, md: 220 },
+              bottom: '-12%',
+              right: '10%',
+              width: { xs: 120, md: 190 },
+              height: { xs: 120, md: 190 },
               borderRadius: '50%',
-              background: (theme) => `radial-gradient(circle at 40% 40%, ${theme.palette.primary.main}55, transparent 70%)`,
-              filter: 'blur(6px)',
+              background: `
+                radial-gradient(circle at 32% 28%, rgba(255,255,255,0.9), rgba(255,255,255,0) 32%),
+                radial-gradient(circle at 68% 74%, rgba(0,0,0,0.4), transparent 55%),
+                radial-gradient(circle at 42% 38%, #F3CB78, #B8842E 78%)
+              `,
+              boxShadow: '0 24px 46px rgba(232,179,78,0.28), inset -8px -10px 20px rgba(0,0,0,0.4), inset 6px 8px 14px rgba(255,255,255,0.2)',
               animation: 'float-blob-b 11s ease-in-out infinite',
               '@keyframes float-blob-b': {
                 '0%, 100%': { transform: 'translate(0, 0)' },
-                '50%': { transform: 'translate(16px, -18px)' },
+                '50%': { transform: 'translate(12px, -14px)' },
               },
             }}
           />
-
-          <GlossyWord text="Hello" sx={{ bottom: { xs: '2%', md: '10%' }, left: { xs: '2%', md: '8%' }, transform: 'rotate(-3deg)' }} />
 
           <Container maxWidth="md" sx={{ position: 'relative' }}>
             <RevealOnScroll>

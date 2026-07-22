@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 
 const EDGE_INSET = { xs: '10px', md: '18px' };
+const GUIDE_POSITION = '22%';
 
 function Cross({ sx, lineColor }) {
   return (
@@ -29,7 +30,7 @@ function Cross({ sx, lineColor }) {
  * GridFrame 컴포넌트
  *
  * haoqi.design 스타일의 청사진(blueprint) 그리드 프레임. 섹션 상/하단 구분선,
- * 중앙 세로 가이드라인, 교차점의 십자(+) 마크로 각 섹션을 하나의 패널처럼 보이게 한다.
+ * 좌측 세로 가이드라인, 교차점의 십자(+) 마크로 각 섹션을 하나의 패널처럼 보이게 한다.
  *
  * Props:
  * @param {node} children - 프레임 내부 콘텐츠 [Required]
@@ -57,7 +58,7 @@ function GridFrame({ children, showTop = true, showBottom = false, lineColor = '
           position: 'absolute',
           top: 0,
           bottom: 0,
-          left: '50%',
+          left: GUIDE_POSITION,
           width: '1px',
           bgcolor: lineColor,
           display: { xs: 'none', md: 'block' },
@@ -66,14 +67,14 @@ function GridFrame({ children, showTop = true, showBottom = false, lineColor = '
       {showTop && (
         <>
           <Cross lineColor={lineColor} sx={{ top: 0, left: EDGE_INSET, transform: 'translate(-50%, -50%)' }} />
-          <Cross lineColor={lineColor} sx={{ top: 0, left: '50%', transform: 'translate(-50%, -50%)', display: { xs: 'none', md: 'block' } }} />
+          <Cross lineColor={lineColor} sx={{ top: 0, left: GUIDE_POSITION, transform: 'translate(-50%, -50%)', display: { xs: 'none', md: 'block' } }} />
           <Cross lineColor={lineColor} sx={{ top: 0, right: EDGE_INSET, transform: 'translate(50%, -50%)' }} />
         </>
       )}
       {showBottom && (
         <>
           <Cross lineColor={lineColor} sx={{ bottom: 0, left: EDGE_INSET, transform: 'translate(-50%, 50%)' }} />
-          <Cross lineColor={lineColor} sx={{ bottom: 0, left: '50%', transform: 'translate(-50%, 50%)', display: { xs: 'none', md: 'block' } }} />
+          <Cross lineColor={lineColor} sx={{ bottom: 0, left: GUIDE_POSITION, transform: 'translate(-50%, 50%)', display: { xs: 'none', md: 'block' } }} />
           <Cross lineColor={lineColor} sx={{ bottom: 0, right: EDGE_INSET, transform: 'translate(50%, 50%)' }} />
         </>
       )}

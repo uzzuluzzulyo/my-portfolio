@@ -62,7 +62,7 @@ function ProjectCard({ project }) {
                 top: 8,
                 right: 8,
                 zIndex: 1,
-                bgcolor: 'accent.lime',
+                bgcolor: 'accent.gold',
                 color: 'accent.contrastText',
                 fontFamily: (theme) => theme.typography.fontFamilyMono,
                 fontSize: '0.65rem',

@@ -30,28 +30,75 @@ function ProjectCard({ project }) {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        transition: 'border-color 0.2s ease',
+        transition: 'border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease',
         '&:hover': {
           borderColor: 'text.secondary',
+          transform: 'translateY(-3px)',
+          boxShadow: '0 12px 28px rgba(0,0,0,0.35)',
         },
       }}
     >
       {project.thumbnail_url && (
-        <CardMedia
-          component="img"
-          src={project.thumbnail_url}
-          alt={project.title}
-          loading="lazy"
+        <Box
+          component={project.detail_url ? 'a' : 'div'}
+          href={project.detail_url || undefined}
+          target={project.detail_url ? '_blank' : undefined}
+          rel={project.detail_url ? 'noopener noreferrer' : undefined}
+          className="project-thumb"
           sx={{
-            aspectRatio: '4 / 3',
-            objectFit: 'cover',
-            objectPosition: 'top',
-            bgcolor: 'background.paper',
+            position: 'relative',
+            display: 'block',
+            overflow: 'hidden',
             borderBottom: '1px solid',
             borderColor: 'divider',
-            filter: 'grayscale(0.15)',
+            bgcolor: 'background.paper',
           }}
-        />
+        >
+          <CardMedia
+            component="img"
+            src={project.thumbnail_url}
+            alt={project.title}
+            loading="lazy"
+            sx={{
+              aspectRatio: '4 / 3',
+              objectFit: 'cover',
+              objectPosition: 'top',
+              filter: 'grayscale(0.15)',
+              transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+              '.project-thumb:hover &': { transform: 'scale(1.06)' },
+            }}
+          />
+          {project.detail_url && (
+            <Box
+              sx={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'flex-start',
+                p: 2,
+                background: 'linear-gradient(180deg, transparent 55%, rgba(4,5,8,0.85) 100%)',
+                opacity: 0,
+                transition: 'opacity 0.3s ease',
+                '.project-thumb:hover &': { opacity: 1 },
+              }}
+            >
+              <Typography
+                sx={{
+                  color: '#FFFFFF',
+                  fontWeight: 700,
+                  fontSize: '0.8rem',
+                  letterSpacing: '0.04em',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 0.5,
+                }}
+              >
+                Explore <ArrowOutwardRoundedIcon sx={{ fontSize: '0.9rem' }} />
+              </Typography>
+            </Box>
+          )}
+        </Box>
       )}
 
       <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', p: { xs: 2.5, md: 3 } }}>

@@ -12,9 +12,46 @@ function HeroSection() {
         bgcolor: 'background.default',
         py: { xs: 10, md: 16 },
         px: { xs: 2.5, md: 4 },
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="md">
+      <Box
+        aria-hidden
+        sx={{
+          position: 'absolute',
+          top: '-10%',
+          right: '-8%',
+          width: { xs: 220, md: 380 },
+          height: { xs: 220, md: 380 },
+          borderRadius: '50%',
+          background: (theme) => `radial-gradient(circle at 35% 35%, ${theme.palette.primary.main}33, transparent 70%)`,
+          filter: 'blur(10px)',
+          animation: 'float-blob-a 9s ease-in-out infinite',
+          '@keyframes float-blob-a': {
+            '0%, 100%': { transform: 'translate(0, 0)' },
+            '50%': { transform: 'translate(-18px, 22px)' },
+          },
+        }}
+      />
+      <Box
+        aria-hidden
+        sx={{
+          position: 'absolute',
+          bottom: '-15%',
+          right: '8%',
+          width: { xs: 140, md: 220 },
+          height: { xs: 140, md: 220 },
+          borderRadius: '50%',
+          background: (theme) => `radial-gradient(circle at 40% 40%, ${theme.palette.secondary.main}2e, transparent 70%)`,
+          filter: 'blur(6px)',
+          animation: 'float-blob-b 11s ease-in-out infinite',
+          '@keyframes float-blob-b': {
+            '0%, 100%': { transform: 'translate(0, 0)' },
+            '50%': { transform: 'translate(16px, -18px)' },
+          },
+        }}
+      />
+      <Container maxWidth="md" sx={{ position: 'relative' }}>
         <RevealOnScroll>
           <Box sx={{ width: 40, height: 3, bgcolor: 'accent.main', mb: { xs: 3, md: 4 }, borderRadius: '2px' }} />
           <Typography

@@ -27,6 +27,20 @@ function HeroSection() {
             aria-hidden
             sx={{
               position: 'absolute',
+              top: { xs: '-16%', md: '-14%' },
+              right: { xs: '-14%', md: '-10%' },
+              width: { xs: 340, md: 560 },
+              height: { xs: 340, md: 560 },
+              borderRadius: '50%',
+              background: (theme) => `radial-gradient(circle, ${theme.palette.primary.main}45 0%, transparent 68%)`,
+              filter: 'blur(6px)',
+              animation: 'float-blob-a 9s ease-in-out infinite',
+            }}
+          />
+          <Box
+            aria-hidden
+            sx={{
+              position: 'absolute',
               top: '-8%',
               right: '-6%',
               width: { xs: 200, md: 340 },
@@ -47,6 +61,20 @@ function HeroSection() {
                 '0%, 100%': { transform: 'translate(0, 0)' },
                 '50%': { transform: 'translate(-14px, 18px)' },
               },
+            }}
+          />
+          <Box
+            aria-hidden
+            sx={{
+              position: 'absolute',
+              bottom: '-20%',
+              right: '2%',
+              width: { xs: 200, md: 320 },
+              height: { xs: 200, md: 320 },
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, #E8B34E4D 0%, transparent 68%)',
+              filter: 'blur(6px)',
+              animation: 'float-blob-b 11s ease-in-out infinite',
             }}
           />
           <Box

@@ -97,7 +97,7 @@ function HeroSection() {
                   maxWidth: 560,
                 }}
               >
-                여기는 Hero 섹션입니다. 메인 비주얼, 이름, 간단 소개가 들어갈 예정입니다.
+                안녕하세요. 네.. 뭐라 써야 될지 모르겠네
               </Typography>
             </RevealOnScroll>
           </Container>

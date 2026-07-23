@@ -6,7 +6,7 @@ import RevealOnScroll from '../ui/reveal-on-scroll.jsx';
 import ScrambleText from '../ui/scramble-text.jsx';
 import LiveClock from '../ui/live-clock.jsx';
 import GridFrame from '../ui/grid-frame.jsx';
-import LightRays from '../ui/light-rays.jsx';
+import AmbientGlow from '../ui/ambient-glow.jsx';
 import StarFlare from '../ui/star-flare.jsx';
 import OrbitArc from '../ui/orbit-arc.jsx';
 import StarSpecks from '../ui/star-specks.jsx';
@@ -53,13 +53,12 @@ function HeroSection() {
           }}
         >
           <Box ref={flareGroupRef} aria-hidden sx={{ position: 'absolute', inset: 0 }}>
+            <AmbientGlow sx={{ top: { xs: '-16%', md: '-22%' }, right: { xs: '-26%', md: '-20%' } }} />
             <OrbitArc size={780} sx={{ top: '-42%', left: '18%' }} />
             <OrbitArc size={480} sx={{ top: '-8%', right: '-16%' }} />
             <StarFlare sx={{ top: { xs: '14%', md: '22%' }, right: { xs: '14%', md: '20%' } }} />
             <StarSpecks />
           </Box>
-
-          <LightRays />
 
           <Container maxWidth="md" sx={{ position: 'relative' }}>
             <RevealOnScroll>

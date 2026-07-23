@@ -25,7 +25,13 @@ function ProjectsSection() {
           text="Projects"
           component="h2"
           variant="h4"
-          sx={{ color: 'text.primary', fontSize: { xs: '1.5rem', md: '2rem' } }}
+          sx={{
+            color: 'text.primary',
+            fontFamily: (theme) => theme.typography.fontFamilyDisplay,
+            fontWeight: 700,
+            letterSpacing: '0.02em',
+            fontSize: { xs: '1.6rem', md: '2.1rem' },
+          }}
         />
       </Box>
       <Typography sx={{ color: 'text.secondary', fontSize: { xs: '1rem', md: '1.1rem' }, mb: { xs: 4, md: 5 } }}>

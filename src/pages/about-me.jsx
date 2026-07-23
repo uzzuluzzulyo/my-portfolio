@@ -16,7 +16,14 @@ function AboutMe() {
         <Box sx={{ width: 40, height: 3, bgcolor: 'text.primary', mb: { xs: 3, md: 4 }, borderRadius: '2px' }} />
         <Typography
           variant="h4"
-          sx={{ color: 'text.primary', mb: 2, fontSize: { xs: '1.75rem', md: '2.5rem' } }}
+          sx={{
+            color: 'text.primary',
+            fontFamily: (theme) => theme.typography.fontFamilyDisplay,
+            fontWeight: 700,
+            letterSpacing: '0.02em',
+            mb: 2,
+            fontSize: { xs: '1.9rem', md: '2.6rem' },
+          }}
         >
           About Me
         </Typography>

@@ -16,14 +16,24 @@ import GridFrame from './grid-frame.jsx';
  * @param {boolean} noDivider - 상단 구분선/십자 마크 숨김 여부 [Optional, 기본값: false]
  * @param {boolean} showBottom - 하단 구분선/십자 마크 표시 여부 [Optional, 기본값: false]
  * @param {string} lineColor - 구분선/십자 마크 색상 [Optional, 기본값: 'divider']
+ * @param {node} decoration - 섹션 전체에 걸쳐 배치되는 장식 오버레이(예: StarSpecks) [Optional]
  *
  * Example usage:
  * <SectionContainer><Typography>내용</Typography></SectionContainer>
  */
-function SectionContainer({ children, bgColor = 'background.default', maxWidth = 'md', noDivider = false, showBottom = false, lineColor = 'divider' }) {
+function SectionContainer({
+  children,
+  bgColor = 'background.default',
+  maxWidth = 'md',
+  noDivider = false,
+  showBottom = false,
+  lineColor = 'divider',
+  decoration = null,
+}) {
   return (
     <Box sx={{ width: '100%', bgcolor: bgColor }}>
       <GridFrame showTop={!noDivider} showBottom={showBottom} lineColor={lineColor}>
+        {decoration}
         <Box sx={{ py: { xs: 8, md: 13 }, px: { xs: 2.5, md: 4 } }}>
           <Container maxWidth={maxWidth} sx={{ textAlign: 'left' }}>
             <RevealOnScroll>{children}</RevealOnScroll>

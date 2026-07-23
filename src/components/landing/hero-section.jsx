@@ -7,10 +7,11 @@ import ScrambleText from '../ui/scramble-text.jsx';
 import LiveClock from '../ui/live-clock.jsx';
 import GridFrame from '../ui/grid-frame.jsx';
 import LightRays from '../ui/light-rays.jsx';
+import StarFlare from '../ui/star-flare.jsx';
+import OrbitArc from '../ui/orbit-arc.jsx';
 
 function HeroSection() {
-  const indigoGroupRef = useRef(null);
-  const cyanGroupRef = useRef(null);
+  const flareGroupRef = useRef(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
@@ -20,8 +21,7 @@ function HeroSection() {
     function updateParallax() {
       frameId = null;
       const y = window.scrollY;
-      if (indigoGroupRef.current) indigoGroupRef.current.style.transform = `translateY(${y * 0.18}px)`;
-      if (cyanGroupRef.current) cyanGroupRef.current.style.transform = `translateY(${y * 0.32}px)`;
+      if (flareGroupRef.current) flareGroupRef.current.style.transform = `translateY(${y * 0.22}px)`;
     }
 
     function handleScroll() {
@@ -51,85 +51,10 @@ function HeroSection() {
             justifyContent: 'space-between',
           }}
         >
-          <Box ref={indigoGroupRef} aria-hidden sx={{ position: 'absolute', inset: 0 }}>
-            <Box
-              sx={{
-                position: 'absolute',
-                top: { xs: '-16%', md: '-14%' },
-                right: { xs: '-14%', md: '-10%' },
-                width: { xs: 340, md: 560 },
-                height: { xs: 340, md: 560 },
-                borderRadius: '50%',
-                background: (theme) => `radial-gradient(circle, ${theme.palette.primary.main}45 0%, transparent 68%)`,
-                filter: 'blur(6px)',
-                animation: 'float-blob-a 9s ease-in-out infinite',
-              }}
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                top: '-8%',
-                right: '-6%',
-                width: { xs: 200, md: 340 },
-                height: { xs: 200, md: 340 },
-                borderRadius: '50%',
-                overflow: 'hidden',
-                background: (theme) => `
-                  linear-gradient(125deg, transparent 22%, rgba(255,255,255,0.55) 38%, rgba(255,255,255,0.05) 47%, transparent 60%),
-                  radial-gradient(circle at 24% 20%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 7%, transparent 20%),
-                  radial-gradient(circle at 82% 16%, rgba(255,255,255,0.25) 0%, transparent 26%),
-                  radial-gradient(circle at 78% 82%, rgba(0,0,0,0.55) 0%, transparent 58%),
-                  radial-gradient(circle at 45% 45%, ${theme.palette.primary.light} 0%, ${theme.palette.primary.dark} 85%)
-                `,
-                boxShadow: (theme) =>
-                  `inset -10px -14px 26px rgba(0,0,0,0.45), inset 8px 10px 18px rgba(255,255,255,0.12), 0 30px 60px ${theme.palette.primary.main}40`,
-                animation: 'float-blob-a 9s ease-in-out infinite',
-                '@keyframes float-blob-a': {
-                  '0%, 100%': { transform: 'translate(0, 0)' },
-                  '50%': { transform: 'translate(-14px, 18px)' },
-                },
-              }}
-            />
-          </Box>
-
-          <Box ref={cyanGroupRef} aria-hidden sx={{ position: 'absolute', inset: 0 }}>
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: '-20%',
-                right: '2%',
-                width: { xs: 200, md: 320 },
-                height: { xs: 200, md: 320 },
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, #38BDF84D 0%, transparent 68%)',
-                filter: 'blur(6px)',
-                animation: 'float-blob-b 11s ease-in-out infinite',
-              }}
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: '-12%',
-                right: '10%',
-                width: { xs: 120, md: 190 },
-                height: { xs: 120, md: 190 },
-                borderRadius: '50%',
-                overflow: 'hidden',
-                background: `
-                  linear-gradient(125deg, transparent 22%, rgba(255,255,255,0.5) 38%, rgba(255,255,255,0.05) 47%, transparent 60%),
-                  radial-gradient(circle at 26% 22%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 7%, transparent 20%),
-                  radial-gradient(circle at 82% 18%, rgba(255,255,255,0.22) 0%, transparent 26%),
-                  radial-gradient(circle at 78% 82%, rgba(0,0,0,0.5) 0%, transparent 55%),
-                  radial-gradient(circle at 45% 45%, #7DD3FC 0%, #0369A1 85%)
-                `,
-                boxShadow: '0 24px 46px rgba(56,189,248,0.28), inset -8px -10px 20px rgba(0,0,0,0.4), inset 6px 8px 14px rgba(255,255,255,0.12)',
-                animation: 'float-blob-b 11s ease-in-out infinite',
-                '@keyframes float-blob-b': {
-                  '0%, 100%': { transform: 'translate(0, 0)' },
-                  '50%': { transform: 'translate(12px, -14px)' },
-                },
-              }}
-            />
+          <Box ref={flareGroupRef} aria-hidden sx={{ position: 'absolute', inset: 0 }}>
+            <OrbitArc size={780} sx={{ top: '-42%', left: '18%' }} />
+            <OrbitArc size={480} sx={{ top: '-8%', right: '-16%' }} />
+            <StarFlare sx={{ top: { xs: '14%', md: '22%' }, right: { xs: '14%', md: '20%' } }} />
           </Box>
 
           <LightRays />

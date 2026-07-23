@@ -46,7 +46,7 @@ function HeroSection() {
             py: { xs: 10, md: 16 },
             px: { xs: 2.5, md: 4 },
             overflow: 'hidden',
-            minHeight: { xs: 480, md: 620 },
+            minHeight: { xs: 460, md: 560 },
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
@@ -83,9 +83,9 @@ function HeroSection() {
                   fontFamily: (theme) => theme.typography.fontFamilyDisplay,
                   fontWeight: 700,
                   mb: 2.5,
-                  letterSpacing: { xs: '0.02em', md: '0.04em' },
-                  fontSize: { xs: '3.1rem', md: '6rem' },
-                  lineHeight: 1.05,
+                  letterSpacing: { xs: '0.03em', md: '0.06em' },
+                  fontSize: { xs: '2.4rem', md: '4.2rem' },
+                  lineHeight: 1.15,
                   textTransform: 'uppercase',
                 }}
               />

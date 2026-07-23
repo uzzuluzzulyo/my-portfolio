@@ -9,6 +9,7 @@ import GridFrame from '../ui/grid-frame.jsx';
 import LightRays from '../ui/light-rays.jsx';
 import StarFlare from '../ui/star-flare.jsx';
 import OrbitArc from '../ui/orbit-arc.jsx';
+import StarSpecks from '../ui/star-specks.jsx';
 
 function HeroSection() {
   const flareGroupRef = useRef(null);
@@ -55,6 +56,7 @@ function HeroSection() {
             <OrbitArc size={780} sx={{ top: '-42%', left: '18%' }} />
             <OrbitArc size={480} sx={{ top: '-8%', right: '-16%' }} />
             <StarFlare sx={{ top: { xs: '14%', md: '22%' }, right: { xs: '14%', md: '20%' } }} />
+            <StarSpecks />
           </Box>
 
           <LightRays />
@@ -68,11 +70,12 @@ function HeroSection() {
                 variant="h3"
                 sx={{
                   color: 'text.primary',
-                  fontWeight: 900,
+                  fontFamily: (theme) => theme.typography.fontFamilyDisplay,
+                  fontWeight: 700,
                   mb: 2.5,
-                  letterSpacing: '-0.03em',
-                  fontSize: { xs: '2.6rem', md: '4.5rem' },
-                  lineHeight: 1.02,
+                  letterSpacing: { xs: '0.03em', md: '0.06em' },
+                  fontSize: { xs: '2.4rem', md: '4.2rem' },
+                  lineHeight: 1.15,
                   textTransform: 'uppercase',
                 }}
               />

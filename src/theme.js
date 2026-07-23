@@ -32,6 +32,7 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     fontFamilyMono: '"JetBrains Mono", "Roboto Mono", monospace',
+    fontFamilyDisplay: '"Playfair Display", "Georgia", serif',
     h1: {
       fontSize: '2.125rem',
       fontWeight: 900,

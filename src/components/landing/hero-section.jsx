@@ -46,7 +46,7 @@ function HeroSection() {
             py: { xs: 10, md: 16 },
             px: { xs: 2.5, md: 4 },
             overflow: 'hidden',
-            minHeight: { xs: 460, md: 560 },
+            minHeight: { xs: 480, md: 620 },
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
@@ -62,6 +62,17 @@ function HeroSection() {
 
           <Container maxWidth="md" sx={{ position: 'relative' }}>
             <RevealOnScroll>
+              <Typography
+                sx={{
+                  fontFamily: (theme) => theme.typography.fontFamilyMono,
+                  fontSize: '0.75rem',
+                  letterSpacing: '0.14em',
+                  color: 'text.disabled',
+                  mb: 1.5,
+                }}
+              >
+                2026 · PORTFOLIO
+              </Typography>
               <Box sx={{ width: 40, height: 3, bgcolor: 'text.primary', mb: { xs: 3, md: 4 }, borderRadius: '2px' }} />
               <ScrambleText
                 text="My Portfolio"
@@ -72,9 +83,9 @@ function HeroSection() {
                   fontFamily: (theme) => theme.typography.fontFamilyDisplay,
                   fontWeight: 700,
                   mb: 2.5,
-                  letterSpacing: { xs: '0.03em', md: '0.06em' },
-                  fontSize: { xs: '2.4rem', md: '4.2rem' },
-                  lineHeight: 1.15,
+                  letterSpacing: { xs: '0.02em', md: '0.04em' },
+                  fontSize: { xs: '3.1rem', md: '6rem' },
+                  lineHeight: 1.05,
                   textTransform: 'uppercase',
                 }}
               />
@@ -90,6 +101,32 @@ function HeroSection() {
               </Typography>
             </RevealOnScroll>
           </Container>
+
+          <Box
+            aria-hidden
+            sx={{
+              position: 'absolute',
+              bottom: { xs: 20, md: 32 },
+              right: { xs: 20, md: 40 },
+              textAlign: 'right',
+              display: { xs: 'none', sm: 'block' },
+            }}
+          >
+            {['REACT', 'VITE', 'MUI', 'SUPABASE'].map((tag) => (
+              <Typography
+                key={tag}
+                sx={{
+                  fontFamily: (theme) => theme.typography.fontFamilyMono,
+                  fontSize: '0.7rem',
+                  letterSpacing: '0.08em',
+                  color: 'text.disabled',
+                  lineHeight: 1.9,
+                }}
+              >
+                {tag}
+              </Typography>
+            ))}
+          </Box>
 
           <Container maxWidth="md" sx={{ position: 'relative', mt: { xs: 8, md: 10 } }}>
             <LiveClock />
